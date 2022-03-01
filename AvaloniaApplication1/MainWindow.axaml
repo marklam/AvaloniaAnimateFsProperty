@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cf="clr-namespace:ControlLibraryFS;assembly=ControlLibraryFS"
+        xmlns:cc="clr-namespace:ControlLibraryCS;assembly=ControlLibraryCS"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.MainWindow"
+        Title="AvaloniaApplication1">
+  <Window.Styles>
+    <Style Selector="cf|StringFormatFloatTextBlock">
+      <Style.Animations>
+        <Animation Delay="0:0:2" Duration="0:0:30" IterationCount="1" FillMode="Both">
+          <KeyFrame Cue="0%">
+            <Setter Property="Value" Value ="0"/>
+          </KeyFrame>
+          <KeyFrame Cue="100%">
+            <Setter Property="Value" Value ="1"/>
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+    <Style Selector="cc|StringFormatFloatTextBlock">
+      <Style.Animations>
+        <Animation Delay="0:0:2" Duration="0:0:30" IterationCount="1" FillMode="Both">
+          <KeyFrame Cue="0%">
+            <Setter Property="Value" Value="0"/>
+          </KeyFrame>
+          <KeyFrame Cue="100%">
+            <Setter Property="Value" Value="1"/>
+          </KeyFrame>
+        </Animation>
+      </Style.Animations> 
+    </Style>
+  </Window.Styles>
+  <StackPanel>
+    <cc:StringFormatFloatTextBlock Value=".98" StringFormat="{}{0:00.00%}" />
+    <cf:StringFormatFloatTextBlock Value=".98" StringFormat="{}{0:00.00%}" />
+  </StackPanel>
+</Window>
